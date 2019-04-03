@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @date 2019/4/2 13:43
  */
 
-@Component
+//@Component
 public class PayProducer {
 
     //producer group name.

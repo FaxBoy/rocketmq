@@ -3,6 +3,7 @@ package com.mouse.rocketmq.controller;
 import com.mouse.rocketmq.jms.PayProducer;
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.exception.RemotingException;
@@ -23,8 +24,9 @@ import java.util.HashMap;
 @RestController
 public class PayController {
 
+    /**使用RocketMq的生产者*/
     @Autowired
-    private PayProducer payProducer;
+    private DefaultMQProducer defaultMQProducer;
 
     private static  final String topic = "TopicTest";
 
@@ -33,7 +35,7 @@ public class PayController {
 
         Message message = new Message(topic,"taga", ("hello rocketmq = "+text).getBytes() );
 
-        SendResult sendResult = payProducer.getProducer().send(message);
+        SendResult sendResult = defaultMQProducer.send(message);
 
         System.out.println(sendResult);
 
