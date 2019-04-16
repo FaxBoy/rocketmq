@@ -73,7 +73,7 @@ public class MQConsumerConfiguration {
         consumer.setConsumeThreadMin(consumeThreadMin);
         consumer.setConsumeThreadMax(consumeThreadMax);
         consumer.registerMessageListener(mqMessageListenerProcessor);
-//        consumer.setMessageModel(MessageModel.BROADCASTING);
+//      consumer.setMessageModel(MessageModel.BROADCASTING);
         /**
          * 设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费
          * 如果非第一次启动，那么按照上次消费的位置继续消费
