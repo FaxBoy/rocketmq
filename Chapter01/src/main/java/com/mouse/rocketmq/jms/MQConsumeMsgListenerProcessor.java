@@ -56,6 +56,8 @@ public class MQConsumeMsgListenerProcessor implements MessageListenerConcurrentl
                 //TODO 获取该消息重试次数
                 int reconsume = messageExt.getReconsumeTimes();
                 if(reconsume ==3){//消息已经重试了3次，如果不需要再次消费，则返回成功
+                    //多次重试后还无法消费的数据进行其他处理，如数据库记录
+                    //TODO 记录逻辑代码
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
                 //TODO 处理对应的业务逻辑

@@ -1,6 +1,5 @@
 package com.mouse.rocketmq.jms;
 
-import com.mouse.rocketmq.config.RocketmqConfig;
 import com.mouse.rocketmq.constants.RocketMQErrorEnum;
 import com.mouse.rocketmq.exception.RocketMQException;
 import org.apache.commons.lang3.StringUtils;
@@ -11,13 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.lang.annotation.*;
 
 /**
  * 消费者bean
@@ -78,6 +73,7 @@ public class MQConsumerConfiguration {
         consumer.setConsumeThreadMin(consumeThreadMin);
         consumer.setConsumeThreadMax(consumeThreadMax);
         consumer.registerMessageListener(mqMessageListenerProcessor);
+//        consumer.setMessageModel(MessageModel.BROADCASTING);
         /**
          * 设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费
          * 如果非第一次启动，那么按照上次消费的位置继续消费
