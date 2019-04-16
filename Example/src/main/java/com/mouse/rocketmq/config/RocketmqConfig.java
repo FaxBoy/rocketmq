@@ -1,8 +1,5 @@
 package com.mouse.rocketmq.config;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
 /**
  * @author shil <sl166199@163.com>
  * @version v1.0
