@@ -23,7 +23,7 @@ public class SyncProducer {
         producer.start();
         for (int i = 0; i < 100; i++) {
             //Create a message instance, specifying topic, tag and message body.
-            Message msg = new Message("TopicTes333t" /* Topic */,
+            Message msg = new Message("TopicTest" /* Topic */,
                     "TagA" /* Tag */,
                     ("Hello RocketMQ " +
                             i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
