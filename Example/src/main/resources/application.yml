@@ -10,10 +10,10 @@ mouse:
       sendMsgTimeout: 3000 #发送消息超时时间,默认3000
       retryTimesWhenSendFailed: 2 #发送消息失败重试次数，默认2
     consumer:
-      isOnOff: off #on==true 踩过的坑
+      isOnOff: on #on==true 踩过的坑
       groupName: pay_producer_group
       namesrvAddr: 10.211.55.4:9876;10.211.55.6:9876 #mq的nameserver地址
-      topics: TopicTest* #该消费者订阅的主题和tags("*"号表示订阅该主题下所有的tags),格式：topic~tag1||tag2||tag3;topic2~*;
+      topics: TopicTest~* #该消费者订阅的主题和tags("*"号表示订阅该主题下所有的tags),格式：topic~tag1||tag2||tag3;topic2~*;
       consumeThreadMin: 20
       consumeThreadMax: 64
       consumeMessageBatchMaxSize: 1 #设置一次消费消息的条数，默认为1条
